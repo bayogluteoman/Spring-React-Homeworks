@@ -3,6 +3,7 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
+
         Student student1 = new Student("Teoman","Bayoğlu",1);
         Student student2 = new Student("Yusuf","Bayoğlu",2);
 
