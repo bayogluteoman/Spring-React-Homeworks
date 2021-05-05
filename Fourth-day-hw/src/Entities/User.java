@@ -6,7 +6,7 @@ import java.util.Set;
 public class User {
 
     private int id;
-    private double tc_number;
+    private String tc_number;
     private String first_name;
     private String last_name;
     private int money;
@@ -14,7 +14,7 @@ public class User {
 
 
 
-    public User(int id, long tc_number, String first_name, String last_name) {
+    public User(int id, String tc_number, String first_name, String last_name) {
         this.id = id;
         this.tc_number = tc_number;
         this.first_name = first_name;
@@ -30,11 +30,11 @@ public class User {
         this.id = id;
     }
 
-    public double getTc_number() {
+    public String getTc_number() {
         return tc_number;
     }
 
-    public void setTc_number(double tc_number) {
+    public void setTc_number(String tc_number) {
         this.tc_number = tc_number;
     }
 

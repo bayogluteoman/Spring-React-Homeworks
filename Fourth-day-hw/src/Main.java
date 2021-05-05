@@ -15,7 +15,7 @@ public class Main {
         IUserService iUserService = new UserManagers(userSet);
         ISaleService iSaleService = new SaleManagers(iVerificationService,iUserService);
 
-        User user = new User(1,1234567890,"Teoman","Bayoğlu");
+        User user = new User(1,"12345678910","Teoman","Bayoğlu");
 
         iUserService.add(user);
 
