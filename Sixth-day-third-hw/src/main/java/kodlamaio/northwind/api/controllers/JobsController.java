@@ -1,11 +1,11 @@
 package kodlamaio.northwind.api.controllers;
 
 import kodlamaio.northwind.business.abstracts.JobService;
+import kodlamaio.northwind.core.utilities.results.DataResult;
+import kodlamaio.northwind.core.utilities.results.Result;
 import kodlamaio.northwind.entities.concretes.Job;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -21,10 +21,14 @@ public class JobsController {
         this.jobService = jobService;
     }
 
-
-
     @GetMapping("/getall")
-    public List<Job> getAll(){
+    public DataResult<List<Job>> getAll(){
         return this.jobService.getAll();
     }
+
+    @PostMapping("/add")
+    public Result add(@RequestBody Job job){
+        return this.jobService.add(job);
+    }
+
 }
