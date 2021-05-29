@@ -6,5 +6,5 @@ import org.springframework.stereotype.Service;
 
 @Service
 public interface ServiceAdapter {
-    public boolean checkIfRealPerson(Candidate candidate) throws Exception;
+   boolean checkIfRealPerson(Candidate candidate) throws Exception;
 }
