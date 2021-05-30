@@ -11,5 +11,4 @@ import java.util.List;
 public interface CandidateService {
     SuccessDataResult<List<Candidate>> getAll();
     DataResult add(Candidate candidate);
-
 }

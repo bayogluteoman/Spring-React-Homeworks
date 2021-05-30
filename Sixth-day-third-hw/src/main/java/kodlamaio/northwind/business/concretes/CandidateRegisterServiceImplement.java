@@ -1,6 +1,6 @@
 package kodlamaio.northwind.business.concretes;
 
-//import kodlamaio.northwind.adapter.abstracts.ServiceAdapter;
+
 import kodlamaio.northwind.adapter.abstracts.ServiceAdapter;
 import kodlamaio.northwind.business.abstracts.ActivationCodeService;
 import kodlamaio.northwind.business.abstracts.CandidateRegisterService;
@@ -37,8 +37,8 @@ public class CandidateRegisterServiceImplement implements CandidateRegisterServi
         if (!notNullFields(candidate))
             return new ErrorDataResult("All field must be filled");
         candidateRepository.save(candidate);
-        activationCodeService.activateCandidateAccountByEmail(candidate,"afff5aa472sssb");
-        return new SuccessDataResult<>(candidate, "Succesfully registered to the system. Please verify your account from e-mail.");
+       // activationCodeService.activateCandidateAccountByEmail(candidate,"afff5aa472sssb");
+        return new SuccessDataResult(candidate, "Succesfully registered to the system. Please verify your account from e-mail.");
     }
 
     @Override

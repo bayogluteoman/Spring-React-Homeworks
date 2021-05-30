@@ -1,17 +1,22 @@
 package kodlamaio.northwind.entities.concretes;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import kodlamaio.northwind.entities.abstracts.User;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @NoArgsConstructor
+@AllArgsConstructor
+@EqualsAndHashCode(callSuper = false)
 @Data
 @Table(name = "employers")
+@JsonIgnoreProperties({"hibernateLazyInitializer","handler","activationCodeEmployer","employerActivationByEmployee","jobAdvertisement"})
 public class Employer extends User {
 
     @Column(name = "company_name")
@@ -22,4 +27,13 @@ public class Employer extends User {
 
     @Column(name= "phone_number")
     private String telephoneNumber;
+
+    @OneToOne(mappedBy = "employer")
+    private ActivationCodeEmployer activationCodeEmployer;
+
+    @OneToOne(mappedBy = "employer")
+    private EmployerActivationByEmployee employerActivationByEmployee;
+
+    @OneToMany(mappedBy="employer")
+    private List<JobAdvertisement> jobAdvertisement;
 }

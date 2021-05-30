@@ -1,12 +1,15 @@
 package kodlamaio.northwind.entities.concretes;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name="job_titles")
 @Data
+@NoArgsConstructor
 public class Job {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -16,5 +19,8 @@ public class Job {
     @Column(name="job_title")
     private String jobTitle;
 
-    public Job(){}
+    @OneToMany(mappedBy = "job")
+    private List<JobAdvertisement> jobAdvertisement;
+
+
 }

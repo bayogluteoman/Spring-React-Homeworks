@@ -5,6 +5,7 @@ import kodlamaio.northwind.business.abstracts.EmployerRegisterService;
 import kodlamaio.northwind.core.utilities.results.DataResult;
 import kodlamaio.northwind.core.utilities.results.ErrorDataResult;
 import kodlamaio.northwind.core.utilities.results.SuccessDataResult;
+import kodlamaio.northwind.dataAccess.abstratcs.ActivationCodeEmployerRepository;
 import kodlamaio.northwind.dataAccess.abstratcs.EmployeeRepository;
 import kodlamaio.northwind.dataAccess.abstratcs.EmployerRepository;
 import kodlamaio.northwind.entities.concretes.Employer;
@@ -18,11 +19,13 @@ public class EmployerRegisterServiceImplement implements EmployerRegisterService
     private final EmployerRepository employerRepository;
     private final ActivationCodeService activationCodeService;
     private final EmployeeRepository employeeRepository;
+    private final ActivationCodeEmployerRepository activationCodeEmployerRepository;
 
-    public EmployerRegisterServiceImplement(EmployerRepository employerRepository, ActivationCodeService activationCodeService, EmployeeRepository employeeRepository) {
+    public EmployerRegisterServiceImplement(EmployerRepository employerRepository, ActivationCodeService activationCodeService, EmployeeRepository employeeRepository, ActivationCodeEmployerRepository activationCodeEmployerRepository) {
         this.employerRepository = employerRepository;
         this.activationCodeService = activationCodeService;
         this.employeeRepository = employeeRepository;
+        this.activationCodeEmployerRepository = activationCodeEmployerRepository;
     }
 
     @Override
@@ -31,9 +34,8 @@ public class EmployerRegisterServiceImplement implements EmployerRegisterService
             return new ErrorDataResult(employer,"There is a registered employer with same e-mail address.");
         if (!checkNullFields(employer))
             return new ErrorDataResult(employer,"Must be filled all fields.");
-        activationCodeService.activateEmployerAccountByEmail(employer,"ffazccc222sd2gdfhas2");
         employerRepository.save(employer);
-        return new SuccessDataResult(employer,"Succesfully registered.");
+        return new SuccessDataResult(employer,"Succesfully registered. Please activate your account.");
     }
 
     @Override

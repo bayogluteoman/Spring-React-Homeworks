@@ -16,9 +16,6 @@ public class EmployerActivationByEmployee {
     @Column(name = "id")
     private int id;
 
-    @Column(name = "employer_id")
-    private int employerId;
-
     @Column(name = "confirmed_employee_id")
     private int confirmedEmployeeId;
 
@@ -27,4 +24,12 @@ public class EmployerActivationByEmployee {
 
     @Column(name = "confirmed_date")
     private Date confirmedDate;
+
+    @OneToOne
+    @JoinColumn(name = "employer_id")
+    private Employer employer;
+
+    @OneToOne
+    @JoinColumn(name = "employee_id")
+    private Employee employee;
 }

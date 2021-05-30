@@ -1,15 +1,12 @@
 package kodlamaio.northwind.dataAccess.abstratcs;
 
-import kodlamaio.northwind.entities.concretes.Employer;
+import kodlamaio.northwind.entities.concretes.Cities;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.stereotype.Repository;
 
-import java.util.List;
-
 @EnableJpaRepositories
 @Repository
-public interface EmployerRepository extends JpaRepository<Employer,Integer> {
-    List<Employer> findAllByCompanyName(String companyName);
+public interface CitiesDao extends JpaRepository<Cities, Integer> {
     boolean existsById(int id);
 }

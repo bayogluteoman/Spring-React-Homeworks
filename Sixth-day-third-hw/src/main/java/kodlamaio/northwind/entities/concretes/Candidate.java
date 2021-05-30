@@ -5,6 +5,7 @@ import lombok.Data;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import java.util.Date;
 
@@ -24,4 +25,7 @@ public class Candidate extends User {
 
     @Column(name = "birth_day")
     private Date birthDay;
+
+    @OneToOne(mappedBy = "candidate")
+    private ActivationCodeCandidate activationCodeCandidate;
 }

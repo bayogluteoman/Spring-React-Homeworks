@@ -6,7 +6,7 @@ import kodlamaio.northwind.entities.concretes.Employee;
 import kodlamaio.northwind.entities.concretes.Employer;
 
 public interface ActivationCodeService {
-    DataResult activateCandidateAccountByEmail(Candidate candidate, String activationCode);
-    DataResult activateEmployerAccountByEmail(Employer Employer, String activationCode);
-    DataResult activateEmployerAccountByHrmsPersonal(Employer employer, Employee employee);
+    DataResult activateCandidateAccountByEmail(int candidateId);
+    DataResult activateEmployerAccountByEmail(int employerId);
+    DataResult activateEmployerAccountByHrmsPersonal(int employerId, int employeeId);
 }

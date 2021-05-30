@@ -1,5 +1,6 @@
 package kodlamaio.northwind.api.controllers;
 
+import kodlamaio.northwind.business.abstracts.ActivationCodeService;
 import kodlamaio.northwind.business.abstracts.CandidateRegisterService;
 import kodlamaio.northwind.business.abstracts.CandidateService;
 import kodlamaio.northwind.core.utilities.results.DataResult;
@@ -12,10 +13,12 @@ import org.springframework.web.bind.annotation.*;
 public class CandidateController {
     private final CandidateService candidateService;
     private final CandidateRegisterService candidateRegisterService;
+    private final ActivationCodeService activationCodeService;
 
-    public CandidateController(CandidateService candidateService, CandidateRegisterService candidateRegisterService) {
+    public CandidateController(CandidateService candidateService, CandidateRegisterService candidateRegisterService, ActivationCodeService activationCodeService) {
         this.candidateService = candidateService;
         this.candidateRegisterService = candidateRegisterService;
+        this.activationCodeService = activationCodeService;
     }
 
     @GetMapping("/getall")
@@ -27,5 +30,7 @@ public class CandidateController {
     public Result add(@RequestBody Candidate candidate) throws Exception {
         return candidateRegisterService.register(candidate);
     }
+
+
 
 }
