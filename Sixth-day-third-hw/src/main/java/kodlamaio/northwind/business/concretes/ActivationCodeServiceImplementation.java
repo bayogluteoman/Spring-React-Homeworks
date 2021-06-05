@@ -3,7 +3,7 @@ package kodlamaio.northwind.business.concretes;
 import kodlamaio.northwind.business.abstracts.ActivationCodeService;
 import kodlamaio.northwind.core.utilities.results.DataResult;
 import kodlamaio.northwind.core.utilities.results.SuccessDataResult;
-import kodlamaio.northwind.dataAccess.abstratcs.*;
+import kodlamaio.northwind.dataAccess.abstracts.*;
 import kodlamaio.northwind.entities.concretes.*;
 import org.springframework.stereotype.Service;
 

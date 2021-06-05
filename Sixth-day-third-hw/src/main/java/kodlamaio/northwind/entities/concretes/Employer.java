@@ -1,6 +1,7 @@
 package kodlamaio.northwind.entities.concretes;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import io.swagger.annotations.ApiModelProperty;
 import kodlamaio.northwind.entities.abstracts.User;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -29,11 +30,14 @@ public class Employer extends User {
     private String telephoneNumber;
 
     @OneToOne(mappedBy = "employer")
+    @ApiModelProperty(hidden = true)
     private ActivationCodeEmployer activationCodeEmployer;
 
     @OneToOne(mappedBy = "employer")
+    @ApiModelProperty(hidden = true)
     private EmployerActivationByEmployee employerActivationByEmployee;
 
     @OneToMany(mappedBy="employer")
+    @ApiModelProperty(hidden = true)
     private List<JobAdvertisement> jobAdvertisement;
 }

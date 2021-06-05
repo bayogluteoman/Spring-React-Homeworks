@@ -3,7 +3,7 @@ package kodlamaio.northwind.business.concretes;
 import kodlamaio.northwind.business.abstracts.EmployerService;
 import kodlamaio.northwind.core.utilities.results.DataResult;
 import kodlamaio.northwind.core.utilities.results.SuccessDataResult;
-import kodlamaio.northwind.dataAccess.abstratcs.EmployerRepository;
+import kodlamaio.northwind.dataAccess.abstracts.EmployerRepository;
 import kodlamaio.northwind.entities.concretes.Employer;
 import org.springframework.stereotype.Service;
 

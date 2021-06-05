@@ -1,11 +1,8 @@
 package kodlamaio.northwind.business.concretes;
 
 import kodlamaio.northwind.business.abstracts.JobService;
-import kodlamaio.northwind.core.utilities.results.DataResult;
-import kodlamaio.northwind.core.utilities.results.Result;
-import kodlamaio.northwind.core.utilities.results.SuccessDataResult;
-import kodlamaio.northwind.core.utilities.results.SuccessResult;
-import kodlamaio.northwind.dataAccess.abstratcs.JobDao;
+import kodlamaio.northwind.core.utilities.results.*;
+import kodlamaio.northwind.dataAccess.abstracts.JobDao;
 import kodlamaio.northwind.entities.concretes.Job;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -31,8 +28,14 @@ public class JobManager implements JobService {
     }
 
     @Override
-    public Result add(Job job) {
-        this.jobDao.save(job);
-        return new SuccessResult("The job has been added.");
+    public DataResult add(Job job) {
+        List<Job> jobList = jobDao.findAll();
+        for (Job job1 : jobList){
+            if (job1.getJobTitle().equals(job.getJobTitle())){
+                return new ErrorDataResult(job, "Job has already been added before.");
+            }
+        }
+        jobDao.save(job);
+        return new SuccessDataResult(job,"The job added.");
     }
 }

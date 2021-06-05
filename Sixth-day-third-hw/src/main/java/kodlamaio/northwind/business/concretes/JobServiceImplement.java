@@ -5,7 +5,7 @@ import kodlamaio.northwind.core.utilities.results.DataResult;
 import kodlamaio.northwind.core.utilities.results.ErrorDataResult;
 import kodlamaio.northwind.core.utilities.results.Result;
 import kodlamaio.northwind.core.utilities.results.SuccessDataResult;
-import kodlamaio.northwind.dataAccess.abstratcs.JobRepository;
+import kodlamaio.northwind.dataAccess.abstracts.JobRepository;
 import kodlamaio.northwind.entities.concretes.Job;
 
 import java.util.List;
@@ -25,7 +25,7 @@ public class JobServiceImplement implements JobService {
     }
 
     @Override
-    public Result add(Job job) {
+    public DataResult add(Job job) {
         List<Job> jobList = jobRepository.findAll();
         for (Job job1 : jobList){
             if (job1.getJobTitle().equals(job.getJobTitle())){

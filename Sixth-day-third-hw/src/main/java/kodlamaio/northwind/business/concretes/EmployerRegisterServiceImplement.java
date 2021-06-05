@@ -5,9 +5,9 @@ import kodlamaio.northwind.business.abstracts.EmployerRegisterService;
 import kodlamaio.northwind.core.utilities.results.DataResult;
 import kodlamaio.northwind.core.utilities.results.ErrorDataResult;
 import kodlamaio.northwind.core.utilities.results.SuccessDataResult;
-import kodlamaio.northwind.dataAccess.abstratcs.ActivationCodeEmployerRepository;
-import kodlamaio.northwind.dataAccess.abstratcs.EmployeeRepository;
-import kodlamaio.northwind.dataAccess.abstratcs.EmployerRepository;
+import kodlamaio.northwind.dataAccess.abstracts.ActivationCodeEmployerRepository;
+import kodlamaio.northwind.dataAccess.abstracts.EmployeeRepository;
+import kodlamaio.northwind.dataAccess.abstracts.EmployerRepository;
 import kodlamaio.northwind.entities.concretes.Employer;
 import org.springframework.stereotype.Service;
 

@@ -1,6 +1,7 @@
 package kodlamaio.northwind.entities.concretes;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
@@ -24,5 +25,6 @@ public class Cities {
     private String city_name;
 
     @OneToMany(mappedBy = "cities")
+    @ApiModelProperty(hidden = true)
     private List<JobAdvertisement> jobAdvertisement;
 }

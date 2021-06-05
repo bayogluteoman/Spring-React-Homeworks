@@ -1,5 +1,6 @@
 package kodlamaio.northwind.entities.concretes;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import io.swagger.annotations.ApiModelProperty;
 import kodlamaio.northwind.entities.abstracts.User;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -22,6 +23,7 @@ public class JobAdvertisement {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
+    @ApiModelProperty(hidden = true)
     private int id;
 
     @ManyToOne()
@@ -44,8 +46,8 @@ public class JobAdvertisement {
     @Column(name = "num_of_position")
     private int num_of_position;
 
-    @Column(name = "last_appy_date")
-    private Date last_appy_date;
+    @Column(name = "last_apply_date")
+    private Date last_apply_date;
 
     @ManyToOne()
     @JoinColumn(name = "employer_id")
@@ -54,6 +56,7 @@ public class JobAdvertisement {
     @CreationTimestamp
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name="publish_date", updatable = false)
+    @ApiModelProperty(hidden = true)
     private Date publishDate;
 
 

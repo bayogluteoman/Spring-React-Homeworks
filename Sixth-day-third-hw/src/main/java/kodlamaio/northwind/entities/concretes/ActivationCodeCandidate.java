@@ -1,6 +1,7 @@
 package kodlamaio.northwind.entities.concretes;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import io.swagger.annotations.ApiModelProperty;
 import kodlamaio.northwind.entities.abstracts.ActivationCodes;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -18,6 +19,7 @@ public class ActivationCodeCandidate extends ActivationCodes {
 
     @OneToOne
     @JoinColumn(name = "candidate_id")
+    @ApiModelProperty(hidden = true)
     private Candidate candidate;
 
 }

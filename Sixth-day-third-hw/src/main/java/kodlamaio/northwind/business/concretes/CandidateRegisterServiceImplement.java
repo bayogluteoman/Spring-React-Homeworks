@@ -7,7 +7,7 @@ import kodlamaio.northwind.business.abstracts.CandidateRegisterService;
 import kodlamaio.northwind.core.utilities.results.DataResult;
 import kodlamaio.northwind.core.utilities.results.ErrorDataResult;
 import kodlamaio.northwind.core.utilities.results.SuccessDataResult;
-import kodlamaio.northwind.dataAccess.abstratcs.CandidateRepository;
+import kodlamaio.northwind.dataAccess.abstracts.CandidateRepository;
 import kodlamaio.northwind.entities.concretes.Candidate;
 import org.springframework.stereotype.Service;
 

@@ -3,7 +3,7 @@ package kodlamaio.northwind.business.concretes;
 import kodlamaio.northwind.business.abstracts.UserService;
 import kodlamaio.northwind.core.utilities.results.DataResult;
 import kodlamaio.northwind.core.utilities.results.SuccessDataResult;
-import kodlamaio.northwind.dataAccess.abstratcs.UserRepository;
+import kodlamaio.northwind.dataAccess.abstracts.UserRepository;
 import kodlamaio.northwind.entities.abstracts.User;
 
 public class UserServiceImplement implements UserService {

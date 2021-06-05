@@ -2,9 +2,10 @@ package kodlamaio.northwind.business.concretes;
 
 import kodlamaio.northwind.business.abstracts.JobAdvertisementService;
 import kodlamaio.northwind.core.utilities.results.*;
-import kodlamaio.northwind.dataAccess.abstratcs.CitiesDao;
-import kodlamaio.northwind.dataAccess.abstratcs.EmployerRepository;
-import kodlamaio.northwind.dataAccess.abstratcs.JobAdvertisementDao;
+import kodlamaio.northwind.dataAccess.abstracts.CitiesDao;
+import kodlamaio.northwind.dataAccess.abstracts.EmployerRepository;
+import kodlamaio.northwind.dataAccess.abstracts.JobAdvertisementDao;
+import kodlamaio.northwind.dataAccess.abstracts.JobRepository;
 import kodlamaio.northwind.entities.concretes.JobAdvertisement;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
@@ -17,6 +18,7 @@ public class JobAdvertisementManager implements JobAdvertisementService {
     private JobAdvertisementDao jobAdvertisementDao;
     private EmployerRepository employerDao;
     private CitiesDao citiesDao;
+    private JobRepository jobRepository;
 
     public JobAdvertisementManager(JobAdvertisementDao jobAdvertisementDao, EmployerRepository employerDao, CitiesDao citiesDao) {
         this.jobAdvertisementDao = jobAdvertisementDao;
@@ -115,7 +117,7 @@ public class JobAdvertisementManager implements JobAdvertisementService {
 
 
     private boolean isAllFieldsFilled(JobAdvertisement jobAdvertisement) {
-        if (jobAdvertisement.getJobInfo().length() != 0 && jobAdvertisement.getLast_appy_date() != null &&
+        if (jobAdvertisement.getJobInfo().length() != 0 && jobAdvertisement.getLast_apply_date() != null &&
                 jobAdvertisement.getPublishDate() != null) {
             return true;
         }
@@ -134,7 +136,7 @@ public class JobAdvertisementManager implements JobAdvertisementService {
 
 
     private boolean isDifferentCreatedAndExpirationDate(JobAdvertisement jobAdvertisement) {
-        if (!jobAdvertisement.getPublishDate().equals(jobAdvertisement.getLast_appy_date())) {
+        if (!jobAdvertisement.getPublishDate().equals(jobAdvertisement.getLast_apply_date())) {
             return true;
         }
 

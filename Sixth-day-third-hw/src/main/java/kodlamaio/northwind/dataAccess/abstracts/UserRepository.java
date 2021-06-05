@@ -1,4 +1,4 @@
-package kodlamaio.northwind.dataAccess.abstratcs;
+package kodlamaio.northwind.dataAccess.abstracts;
 
 import kodlamaio.northwind.entities.abstracts.User;
 import org.springframework.data.jpa.repository.JpaRepository;
