@@ -13,7 +13,7 @@ import java.util.List;
 @JsonIgnoreProperties({"hibernateLazyInitializer","handler","jobAdvertisements"})
 public class WorkTypeOfJob {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
     @Column(name = "work_type")

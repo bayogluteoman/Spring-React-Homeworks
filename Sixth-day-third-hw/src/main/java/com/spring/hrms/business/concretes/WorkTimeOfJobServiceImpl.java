@@ -28,4 +28,12 @@ public class WorkTimeOfJobServiceImpl implements WorkTimeOfJobService {
     public DataResult<List<WorkTimeOfJob>> getAll() {
         return new SuccessDataResult<List<WorkTimeOfJob>>(workTimeOfJobRepository.findAll());
     }
+
+    @Override
+    public DataResult<WorkTimeOfJob> delete(int id) {
+         WorkTimeOfJob workTimeOfJob = workTimeOfJobRepository.findById(id).get();
+
+        workTimeOfJobRepository.delete(workTimeOfJob);
+        return new SuccessDataResult<WorkTimeOfJob>(workTimeOfJob);
+    }
 }

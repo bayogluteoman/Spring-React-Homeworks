@@ -9,5 +9,6 @@ import java.util.List;
 public interface WorkTimeOfJobService {
     DataResult<WorkTimeOfJob> add(WorkTimeOfJob workTimeOfJob);
     DataResult<List<WorkTimeOfJob>> getAll();
+    DataResult<WorkTimeOfJob> delete(int id);
 
 }

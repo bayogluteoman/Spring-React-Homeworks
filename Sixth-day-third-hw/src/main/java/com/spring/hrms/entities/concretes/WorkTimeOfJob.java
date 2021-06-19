@@ -15,7 +15,7 @@ import java.util.List;
 
 public class WorkTimeOfJob {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
     @Column(name = "work_time")

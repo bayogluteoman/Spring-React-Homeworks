@@ -26,4 +26,9 @@ public class WorkTimeOfJobController {
     public DataResult<WorkTimeOfJob> add(@RequestBody WorkTimeOfJob workTimeOfJob){
         return workTimeOfJobService.add(workTimeOfJob);
     }
+
+    @DeleteMapping("/delete")
+    public Result delete( @RequestParam int id){
+        return workTimeOfJobService.delete(id);
+    }
 }
